@@ -1,0 +1,88 @@
+run:
+  timeout: 5m
+linters:
+  disable-all: true
+  enable:
+    # Default
+    - errcheck
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - typecheck
+    - unused
+    # Manually enabled
+    - asciicheck
+    - bidichk
+    - containedctx
+    - decorder
+    - durationcheck
+    - errchkjson
+    - errname
+    - errorlint
+    - forcetypeassert
+    - gci
+    - gocyclo
+    - godot
+    - gofmt
+    - goprintffuncname
+    - gosec
+    - importas
+    - lll
+    - makezero
+    - misspell
+    - nakedret
+    - nosprintfhostport
+    - prealloc
+    - predeclared
+    - promlinter
+    - revive
+    - stylecheck
+    - unconvert
+    - tenv
+    - whitespace
+linters-settings:
+  govet:
+    # Report about shadowed variables
+    check-shadowing: true
+  gci:
+    # Section configuration to compare against
+    # Section names are case-insensitive and may contain parameters in ()
+    # Default: ["standard", "default"]
+    sections:
+      - standard # Captures all standard packages if they do not match another section
+      - default # Contains all imports that could not be matched to another section type
+      - prefix(game) # Groups all imports from the current module
+  lll:
+    # Max line length, lines longer will be reported
+    # '\t' is counted as 1 character by default, and can be changed with the tab-width option
+    # Default: 120
+    line-length: 120
+  staticcheck:
+    # https://staticcheck.io/docs/options#checks
+    checks:
+      - all
+  gosimple:
+    # https://staticcheck.io/docs/options#checks
+    checks:
+      - all
+  unused:
+    # https://staticcheck.io/docs/options#checks
+    checks:
+      - all
+  stylecheck:
+    # https://staticcheck.io/docs/options#checks
+    checks:
+      - all
+      - -ST1000 # ST1000: at least one file in a package should have a package comment
+    http-status-code-whitelist: []
+issues:
+  exclude-use-default: false
+  exclude:
+    # govet: Common false positives
+    - (possible misuse of unsafe.Pointer|should have signature)
+  exclude-rules:
+    # Exclude `lll` issues for long lines with `go:generate`.
+    - linters:
+        - lll
+      source: "^//go:generate "

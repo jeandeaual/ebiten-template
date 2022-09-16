@@ -1,0 +1,21 @@
+{
+  "recommendations": [
+    "golang.Go",
+    "eamodio.gitlens",
+    "redhat.vscode-yaml",
+    "mathiasfrohlich.Kotlin",
+    "sswg.swift-lang",
+    // Trigger WASM rebuild on save
+    "emeraldwalk.RunOnSave",
+    // Review and manage your GitHub pull requests and issues directly in VS Code
+    "GitHub.vscode-pull-request-github",
+    // Change VS Code's built-in markdown preview to match GitHub
+    "bierner.github-markdown-preview",
+    // Conventional Commits for VS Code
+    "vivaxy.vscode-conventional-commits",
+    // Show the coverage status in the gutter using the `Coverage Gutters: Display Coverage` command
+    "ryanluker.vscode-coverage-gutters",
+    // Show the code coverage as a treeview in the Testing activity bar
+    "tenninebt.vscode-koverage"
+  ]
+}

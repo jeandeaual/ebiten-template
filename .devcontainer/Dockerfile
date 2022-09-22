@@ -19,6 +19,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         # Additional tools
         xz-utils \
         brotli \
+        # Called by the "Run on Save" Visual Studio Code extension
+        curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Install golangci-lint

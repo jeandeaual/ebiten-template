@@ -4,7 +4,7 @@
       {
         // Trigger wasmserve reload
         "match": "\\.(go|png|wav|ogg|ttf)$",
-        "cmd": "wget -q -O /dev/null localhost:8080/_notify"
+        "cmd": "curl -s http://localhost:8080/_notify"
       }
     ]
   }
